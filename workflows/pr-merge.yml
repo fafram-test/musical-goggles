@@ -1,0 +1,13 @@
+name: pr-merge
+on:
+  schedule:
+    - cron: '*/5 * * * *'
+jobs:
+  pr-merge:
+    runs-on: ubuntu-latest
+    steps:
+      - name: pr-merge
+        uses: "pascalgn/automerge-action@a4b03eff945989d41c623c2784d6602560b91e5b"
+        env:
+          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+          MERGE_LABELS: "approved,!wip"

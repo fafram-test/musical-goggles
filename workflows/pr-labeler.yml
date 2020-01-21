@@ -1,0 +1,12 @@
+name: pr-labeler
+on: [pull_request_review, pull_request_review_comment]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: pr-labeler
+      uses: estrada9166/labeler@v1
+      with:
+        GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+        CONFIG_PATH: labeler-config.yml
