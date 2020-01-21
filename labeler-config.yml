@@ -1,0 +1,15 @@
+onComment:
+  set:
+    - commented
+
+onApproved:
+  remove:
+    - needs-update
+  set:
+    - approved
+
+onChangesRequested:
+  remove:
+    - approved
+  set:
+    - needs-update
